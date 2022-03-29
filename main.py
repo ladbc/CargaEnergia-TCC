@@ -1,16 +1,11 @@
-# This is a sample Python script.
+import pandas as pd
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+df_2019 = pd.read_csv("BaseDeDados/CARGA_ENERGIA_2019.csv", header=[0], sep=",")
+df_2020 = pd.read_csv("BaseDeDados/CARGA_ENERGIA_2020.csv")
+df_2021 = pd.read_csv("BaseDeDados/CARGA_ENERGIA_2021.csv")
+df_2022 = pd.read_csv("BaseDeDados/CARGA_ENERGIA_2022.csv")
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+#df_2019.iloc[:, 3] = pd.to_datetime(df_2019.iloc[:,3])
+print(df_2019.head())
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
