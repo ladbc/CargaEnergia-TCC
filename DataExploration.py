@@ -1,9 +1,19 @@
-df_2019.loc[:, 'din_instante'] = pd.to_datetime(df_2019.loc[:,'din_instante'])
-region = df_2019.groupby(df_2019.loc[:,'id_subsistema'])
+import matplotlib.pyplot as plt
+import pandas as pd
 
-figure, axis = plt.subplots(2, 2)
 
-df = region.get_group('SE').loc[:, ('din_instante', 'val_cargaenergiamwmed')]
-df.plot(x='din_instante', y='val_cargaenergiamwmed', kind='line')
-
-plt.show()
+def multiple_plots(df, regions):
+    df = pd.DataFrame(df)
+    dataYearly = df.groupby(df.loc[:, 'Year'])
+    for i in range(0, 10):
+        year = 2012 + i
+        group = dataYearly.get_group(year)
+        for region in regions:
+            plt.plot(group.loc[group['ID'] == region]['Data'],
+                     group.loc[group['ID'] == region]['Carga WMed'],
+                     label="Subsistema {}".format(region))
+            plt.xlabel('Ano')
+            plt.ylabel('Carga WMed')
+        plt.legend()
+        plt.title("Carga WMed no ano de {}".format(year))
+        plt.show()
