@@ -3,6 +3,48 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="/BaseDeDados/CARGA_ENERGIA_2012.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/BaseDeDados/CARGA_ENERGIA_2013.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/BaseDeDados/CARGA_ENERGIA_2014.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/BaseDeDados/CARGA_ENERGIA_2015.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/BaseDeDados/CARGA_ENERGIA_2016.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/BaseDeDados/CARGA_ENERGIA_2017.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/BaseDeDados/CARGA_ENERGIA_2018.csv">
           <value>
             <Attribute>
@@ -11,6 +53,27 @@
           </value>
         </entry>
         <entry key="/BaseDeDados/CARGA_ENERGIA_2019.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/BaseDeDados/CARGA_ENERGIA_2020.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/BaseDeDados/CARGA_ENERGIA_2021.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/BaseDeDados/CARGA_ENERGIA_2022.csv">
           <value>
             <Attribute>
               <option name="separator" value=";" />

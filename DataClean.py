@@ -1,30 +1,20 @@
 import pandas as pd
 
-
 def clean_data(df):
-    df = check_for_nan(df)
-    df = rename_cols(df)
-    df = convert_format(df)
-    print(df.info())
+    regionsData, df = check_for_nan(df)
 
     return df
 
 
-def check_for_nan(df):
-    # If val_cargaenergiamwmed is nan, delete the row
-    return df[df['val_cargaenergiamwmed'].notna()]
+# Verifica se o dataset de entrada possui qualquer nan, caso exista
+# a linha dever ser imputada com o valor observado na data anterior (LOCF)
+def check_for_nan(regions):
+    fullset = pd.DataFrame()
+    for region in regions:
+        nanRows = region[region['Carga_WMed'].isna()]
+        if nanRows.shape[0] > 0:
+            region['Carga_WMed'] = region['Carga_WMed'].fillna(method='bfill')
+        fullset = fullset.append(region)
+    print(fullset[['Carga_WMed']])
 
-
-def convert_format(df):
-    df.loc[:, 'Data'] = pd.to_datetime(df.loc[:, 'Data'])
-    df['ID'] = df['ID'].apply(str)
-    df['Subsistema'] = df['Subsistema'].apply(str)
-
-    return df
-
-
-def rename_cols(df):
-    return df.rename(columns={"id_subsistema": "ID",
-                               "nom_subsistema": "Subsistema",
-                               "din_instante": "Data",
-                               "val_cargaenergiamwmed": "Carga WMed"})
+    return regions, fullset
